@@ -7,12 +7,13 @@ RUN curl -fL -o velocity.jar https://papermc.io
 
 RUN mkdir -p plugins
 
-# Descargar EaglerXServer oficial (v1.1.1) y ViaVersion (5.12.2)
+# Descargar EaglerXServer y ViaVersion
 RUN curl -fL -o plugins/EaglerXServer.jar https://github.com
 RUN curl -fL -o plugins/ViaVersion.jar https://papermc.io
 
+# Copiar configuracion y generar clave automaticamente
 COPY velocity.toml /server/velocity.toml
-COPY forwarding.secret /server/forwarding.secret
+RUN echo "miclave12345" > /server/forwarding.secret
 
 EXPOSE 8080
 CMD ["java", "-Xms256M", "-Xmx450M", "-jar", "velocity.jar"]
