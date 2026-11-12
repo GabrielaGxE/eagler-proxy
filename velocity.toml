@@ -8,7 +8,7 @@ player-info-forwarding-mode = "none"
 forwarding-secret-file = "forwarding.secret"
 
 [servers]
-eaglercraft-minecraf.aternos.me:47126
+bluewhiting.aternos.host:47126
 lobby = "eaglercraft-minecraf.aternos.me:47126"
 try = ["lobby"]
 
