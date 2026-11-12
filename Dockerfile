@@ -2,8 +2,9 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /server
 RUN apk add --no-cache curl jq
 
-# Descargar Velocity, EaglerXServer y ViaVersion
+# Descargar Velocity 4.3.1 (estable oficial)
 RUN curl -fL -o velocity.jar https://papermc.io
+
 RUN mkdir -p plugins
 RUN curl -fL -o plugins/EaglerXServer.jar https://github.com
 RUN curl -fL -o plugins/ViaVersion.jar https://papermc.io
