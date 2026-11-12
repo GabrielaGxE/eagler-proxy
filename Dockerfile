@@ -3,13 +3,13 @@ WORKDIR /server
 RUN apk add --no-cache curl jq
 
 # Descargar Velocity
-RUN curl -L -o velocity.jar https://papermc.io
+RUN curl -fL -o velocity.jar https://papermc.io
 
 RUN mkdir -p plugins
 
-# Descargar EaglerXServer y ViaVersion
-RUN curl -L -o plugins/EaglerXServer.jar https://github.com
-RUN curl -L -o plugins/ViaVersion.jar https://papermc.io
+# Descargar EaglerXServer oficial (v1.1.1) y ViaVersion (5.12.2)
+RUN curl -fL -o plugins/EaglerXServer.jar https://github.com
+RUN curl -fL -o plugins/ViaVersion.jar https://papermc.io
 
 COPY velocity.toml /server/velocity.toml
 COPY forwarding.secret /server/forwarding.secret
